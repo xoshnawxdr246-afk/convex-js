@@ -1,0 +1,17 @@
+import { ConvexProvider, ConvexReactClient } from "convex/react";
+import { api } from "../convex/_generated/api";
+import App from "./App";
+
+//  Vite:
+const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL);
+
+//  Create React App:
+const convex = new ConvexReactClient(process.env.REACT_APP_CONVEX_URL);
+
+root.render(
+  <React.StrictMode>
+    <ConvexProvider client={convex}>
+      <App />
+    </ConvexProvider>
+  </React.StrictMode>
+);
